@@ -51,4 +51,28 @@ public class AssignmentServiceImpl implements AssignmentService {
 		assignmentRepository.deleteAssignment(id);
 	}
 
+	@Override
+	public List<Assignment> getCompletedAssignments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Assignment> getOpenAssignments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void markAssignmentCompleted(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void markAssignmentIncomplete(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

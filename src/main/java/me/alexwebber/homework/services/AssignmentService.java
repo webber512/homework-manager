@@ -10,6 +10,10 @@ public interface AssignmentService {
 
 	public List<Assignment> getAllAssignments();
 
+	public List<Assignment> getCompletedAssignments();
+
+	public List<Assignment> getOpenAssignments();
+
 	public List<Assignment> getAssignmentsForClass(Integer id);
 
 	public Assignment getAssignmentById(Integer id);
@@ -22,4 +26,7 @@ public interface AssignmentService {
 
 	public void deleteAssignment(Integer id);
 
+	public void markAssignmentCompleted(Integer id);
+
+	public void markAssignmentIncomplete(Integer id);
 }
