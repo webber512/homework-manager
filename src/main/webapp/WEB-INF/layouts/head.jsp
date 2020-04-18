@@ -70,14 +70,6 @@
 <script type="text/javascript"
 	src="https://cdn.datatables.net/v/bs4/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/b-print-1.6.1/datatables.min.js"></script>
 
-<!-- Icons -->
-<link rel="apple-touch-icon" sizes="180x180"
-	href="<c:url value='/resources/icons/apple-touch-icon.png' />" />
-<link rel="icon" type="image/png" sizes="32x32"
-	href="<c:url value='/resources/icons/favicon-32x32.png' />" />
-<link rel="icon" type="image/png" sizes="16x16"
-	href="<c:url value='/resources/icons/favicon-16x16.png' />" />
-
 <!-- Full Calendar -->
 <link type="text/css" rel="stylesheet"
 	href="<c:url value='/resources/css/vendor/fullcalendar/main.css'/>">
