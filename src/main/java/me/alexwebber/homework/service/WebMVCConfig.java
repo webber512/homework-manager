@@ -1,4 +1,4 @@
-package me.alexwebber.homework;
+package me.alexwebber.homework.service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

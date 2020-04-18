@@ -1,4 +1,4 @@
-package me.alexwebber.homework;
+package me.alexwebber.homework.service;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
