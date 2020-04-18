@@ -67,6 +67,9 @@
 	</div>
 </div>
 
+<%@ include file="/WEB-INF/layouts/footer.jsp"%>
+
+
 <script>
 window.addEventListener("DOMContentLoaded", (event) => {
 			let submitBtn = document.getElementById("submitForm")

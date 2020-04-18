@@ -26,16 +26,16 @@ public class MainController {
 		return "home";
 	}
 
-	@GetMapping(value = { "/class/new" })
+	@GetMapping(value = { "/classes" })
 	public String getNewClassView(Model model, HttpServletRequest request, HttpSession session) {
-		model.addAttribute("title", "New Class");
+		model.addAttribute("title", "Classes");
 		List<Class> classList = classService.getClasses();
 		model.addAttribute("classList", classList);
 		model.addAttribute("command", new Class());
 		return "newclass";
 	}
 
-	@PostMapping(value = { "/class/new" })
+	@PostMapping(value = { "/classes" })
 	public String postAddBuilding(HttpSession session, Model model, Class myClass) {
 		classService.addClass(model, myClass);
 		return "redirect:/class/new";
