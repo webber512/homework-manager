@@ -12,6 +12,8 @@ public interface AssignmentService {
 
 	public List<Assignment> getAssignmentsForClass(Integer id);
 
+	public Assignment getAssignmentById(Integer id);
+
 	public Integer getNumberOfAssignments();
 
 	public Integer getNumberOfAssignmentsForClass();
