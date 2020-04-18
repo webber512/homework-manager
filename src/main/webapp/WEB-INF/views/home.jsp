@@ -2,19 +2,20 @@
 <div id="container-fluid">
 	<%@ include file="/WEB-INF/layouts/navbar.jsp"%>
 	<div class="row container-fluid">
-		<div class="col-sm-2">
+		<div class="col-sm-3">
 			<br />
 			<h2>Class List</h2>
 			<nav class="navbar bg-light">
 				<ul class="navbar-nav">
 					<c:forEach var="classs" items="${classList}">
-						<li class="nav-item"><a class="nav-link" href="#">${classs.name}</a></li>
+						<li class="nav-item"><a class="nav-link" href="#"><span
+								style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${classs.color}"></span>&nbsp;&nbsp;${classs.name}</a></li>
 					</c:forEach>
 
 				</ul>
 			</nav>
 		</div>
-		<div class="col-sm-8">
+		<div class="col-sm-9">
 			<br />
 			<h2>Assignment List/Calendar View</h2>
 			<nav>
