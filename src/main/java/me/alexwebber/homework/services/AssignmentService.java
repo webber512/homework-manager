@@ -16,7 +16,7 @@ public interface AssignmentService {
 
 	public Integer getNumberOfAssignments();
 
-	public Integer getNumberOfAssignmentsForClass();
+	public Integer getNumberOfAssignmentsForClass(Integer id);
 
 	public void addAssignment(Model model, Assignment assignment);
 
