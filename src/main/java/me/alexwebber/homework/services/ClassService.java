@@ -12,4 +12,7 @@ public interface ClassService {
 
 	public void addClass(Model model, Class myClass);
 
+	public void deleteClass(Integer id);
+	
+	public Class getClassById(Integer id);
 }

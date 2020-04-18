@@ -31,4 +31,16 @@ public class ClassRepository {
 		Object[] args = { myClass.getCode(), myClass.getColor(), myClass.getName(), myClass.getProfessor() };
 		template.update(sql, args);
 	}
+
+	public void deleteClass(Integer id) {
+		String sql = "DELETE FROM classes WHERE id = ?";
+		Object[] args = { id };
+		template.update(sql, args);
+	}
+
+	public Class getClassById(Integer id) {
+		String sql = "SELECT FROM classes WHERE id = ?";
+		Object[] args = { id };
+		return template.queryForObject(sql, args, Homework.CLASS);
+	}
 }

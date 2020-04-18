@@ -22,13 +22,14 @@ public class MainController {
 
 	@GetMapping(value = { "/home", "/" })
 	public String getHomeView(Model model, HttpServletRequest request, HttpSession session) {
+		model.addAttribute("title", "Homework Manager");
 		return "home";
 	}
 
 	@GetMapping(value = { "/class/new" })
 	public String getNewClassView(Model model, HttpServletRequest request, HttpSession session) {
+		model.addAttribute("title", "New Class");
 		List<Class> classList = classService.getClasses();
-
 		model.addAttribute("classList", classList);
 		model.addAttribute("command", new Class());
 		return "newclass";

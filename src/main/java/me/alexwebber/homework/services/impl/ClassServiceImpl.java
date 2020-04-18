@@ -26,4 +26,14 @@ public class ClassServiceImpl implements ClassService {
 		classRepository.addClass(myClass);
 	}
 
+	@Override
+	public void deleteClass(Integer id) {
+		classRepository.deleteClass(id);
+	}
+
+	@Override
+	public Class getClassById(Integer id) {
+		return classRepository.getClassById(id);
+	}
+
 }
