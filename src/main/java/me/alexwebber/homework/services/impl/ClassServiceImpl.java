@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import me.alexwebber.homework.dao.ClassRepository;
 import me.alexwebber.homework.model.Class;
@@ -18,6 +19,11 @@ public class ClassServiceImpl implements ClassService {
 	@Override
 	public List<Class> getClasses() {
 		return classRepository.getAllClasses();
+	}
+
+	@Override
+	public void addClass(Model model, Class myClass) {
+		classRepository.addClass(myClass);
 	}
 
 }

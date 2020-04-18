@@ -25,4 +25,10 @@ public class ClassRepository {
 		return classList;
 
 	}
+
+	public void addClass(Class myClass) {
+		String sql = "INSERT INTO classes (code, color, name, professor) VALUES (?, ?, ?, ?)";
+		Object[] args = { myClass.getCode(), myClass.getColor(), myClass.getName(), myClass.getProfessor() };
+		template.update(sql, args);
+	}
 }

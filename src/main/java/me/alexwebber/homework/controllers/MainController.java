@@ -9,22 +9,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import me.alexwebber.homework.model.Class;
-import me.alexwebber.homework.dao.ClassRepository;
+import me.alexwebber.homework.services.ClassService;
 
 @Controller
 public class MainController {
 
 	@Autowired
-	ClassRepository classRepository;
+	ClassService classService;
 
-	@GetMapping(value = { "/home" })
-	public String getNewBuildingView(Model model, HttpServletRequest request, HttpSession session) {
-
-		List<Class> classList = classRepository.getAllClasses();
-		System.out.print(classList.size());
-		System.out.print(classList.get(0).getName());
+	@GetMapping(value = { "/home", "/" })
+	public String getHomeView(Model model, HttpServletRequest request, HttpSession session) {
 		return "home";
+	}
+
+	@GetMapping(value = { "/class/new" })
+	public String getNewClassView(Model model, HttpServletRequest request, HttpSession session) {
+		List<Class> classList = classService.getClasses();
+
+		model.addAttribute("classList", classList);
+		model.addAttribute("command", new Class());
+		return "newclass";
+	}
+
+	@PostMapping(value = { "/class/new" })
+	public String postAddBuilding(HttpSession session, Model model, Class myClass) {
+		classService.addClass(model, myClass);
+		return "redirect:/class/new";
 	}
 }
