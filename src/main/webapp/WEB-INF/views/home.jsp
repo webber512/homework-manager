@@ -5,6 +5,14 @@
 		<div class="col-sm-2">
 			<br />
 			<h2>Class List</h2>
+			<nav class="navbar bg-light">
+				<ul class="navbar-nav">
+					<c:forEach var="classs" items="${classList}">
+						<li class="nav-item"><a class="nav-link" href="#">${classs.name}</a></li>
+					</c:forEach>
+
+				</ul>
+			</nav>
 		</div>
 		<div class="col-sm-8">
 			<br />

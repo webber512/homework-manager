@@ -23,6 +23,7 @@ public class MainController {
 	@GetMapping(value = { "/home", "/" })
 	public String getHomeView(Model model, HttpServletRequest request, HttpSession session) {
 		model.addAttribute("title", "Homework Manager");
+		model.addAttribute("classList", classService.getClasses());
 		return "home";
 	}
 
