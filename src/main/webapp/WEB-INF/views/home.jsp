@@ -82,7 +82,8 @@
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-centered modal-lg"
+		role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="exampleModalLabel">Add an
@@ -141,8 +142,12 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<label for="description">Description</label>
-										<form:input class="form-control" path="description"
-											type="textarea"></form:input>
+										<form:textarea class="form-control" path="description"
+											type="textarea"></form:textarea>
+										<small id="descriptionHelp" class="form-text text-muted">You
+											can bold text with by surrounding it with **, or italicize by
+											surrounding it with __. This feature is <b>coming soon</b>.
+										</small>
 									</div>
 								</div>
 							</div>
