@@ -23,7 +23,7 @@ public class SpringJDBCConfiguration {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource DMDS = new DriverManagerDataSource();
-		DMDS.setDriverClassName("com.mysql.jdbc.Driver");
+		DMDS.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		DMDS.setUrl("jdbc:mysql://localhost:3306/homework");
 		DMDS.setUsername("root");
 		DMDS.setPassword("");
