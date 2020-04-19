@@ -31,7 +31,7 @@
 								assignments.</small>
 						</div>
 						<div class="col-md-6">
-							<label for="color">Building Color</label>
+							<label for="color">Class Color</label>
 							<form:input path="color" type="color" class="form-control"
 								value="#d8dcd3"></form:input>
 							<small id="colorHelp" class="form-text text-muted">Pick a
