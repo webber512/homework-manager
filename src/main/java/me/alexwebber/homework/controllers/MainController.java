@@ -56,12 +56,4 @@ public class MainController {
 		return "redirect:/class/new";
 	}
 
-	@GetMapping(value = { "/assignment/new" })
-	public String getNewAssignmentModel(Model model, HttpServletRequest request, HttpSession session) {
-		model.addAttribute("title", "New Assignment");
-		model.addAttribute("classList", classService.getClasses());
-		model.addAttribute("command", new Assignment());
-		return "assignments";
-	}
-
 }
