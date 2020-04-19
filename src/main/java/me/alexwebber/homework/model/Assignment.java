@@ -10,6 +10,8 @@ public class Assignment {
 	private String dueDate;
 	private String completedDate;
 	private String completed;
+	private String className;
+	private String classColor;
 
 	public Integer getId() {
 		return id;
@@ -73,6 +75,22 @@ public class Assignment {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public String getClassColor() {
+		return classColor;
+	}
+
+	public void setClassColor(String classColor) {
+		this.classColor = classColor;
 	}
 
 	@Override

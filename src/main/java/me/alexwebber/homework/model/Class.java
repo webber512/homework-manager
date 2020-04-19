@@ -7,6 +7,7 @@ public class Class {
 	private String name;
 	private String professor;
 	private String color;
+	private Integer numberOfAssignments;
 
 	public Integer getId() {
 		return id;
@@ -101,6 +102,14 @@ public class Class {
 	public String toString() {
 		return "Class [id=" + id + ", code=" + code + ", name=" + name + ", professor=" + professor + ", color=" + color
 				+ "]";
+	}
+
+	public Integer getNumberOfAssignments() {
+		return numberOfAssignments;
+	}
+
+	public void setNumberOfAssignments(Integer assignmentCount) {
+		this.numberOfAssignments = assignmentCount;
 	}
 
 }

@@ -20,7 +20,8 @@
 					<li class="nav-item"><a class="nav-link" href="/classes">Classes</a></li>
 
 
-					<li class="nav-item"><a class="nav-link" href="/">Assignments</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/assignment/new">Assignments</a></li>
 
 					<li class="nav-item"><a class="nav-link" href="#"><i
 							class="fa fa-plus"></i></a>

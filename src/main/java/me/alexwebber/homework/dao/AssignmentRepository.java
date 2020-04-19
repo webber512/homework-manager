@@ -15,6 +15,8 @@ import me.alexwebber.homework.util.Homework;
 public class AssignmentRepository {
 	@Autowired
 	JdbcTemplate template;
+	@Autowired
+	ClassRepository classRepository;
 
 	public AssignmentRepository() {
 
@@ -22,7 +24,12 @@ public class AssignmentRepository {
 
 	public List<Assignment> getAllAssignments() {
 		String sql = "SELECT * FROM assignment";
+		String sql2 = "SELECT code FROM classes WHERE id = ?";
 		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
+		for (Assignment a : assignmentList) {
+			Object[] args = { a.getClassId() };
+			a.setClassName(template.queryForObject(sql2, args, String.class));
+		}
 		return assignmentList;
 	}
 
@@ -46,10 +53,11 @@ public class AssignmentRepository {
 		return assignmentCount;
 	}
 
-	public Integer getNumberOfAssignmentsForClass(Integer id) {
-		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ?";
+	public Integer getNumberOfOpenAssignmentsForClass(Integer id) {
+		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ? AND completed = false";
 		Object[] args = { id };
 		Integer assignmentCount = template.queryForObject(sql, args, Integer.class);
+		classRepository.getClassById(id).setNumberOfAssignments(assignmentCount);
 		return assignmentCount;
 	}
 
@@ -74,7 +82,14 @@ public class AssignmentRepository {
 
 	public List<Assignment> getOpenAssignments() {
 		String sql = "SELECT * FROM assignment WHERE completed = false";
+		String sql2 = "SELECT code FROM classes WHERE id = ?";
+		String sql3 = "SELECT color FROM classes WHERE id = ?";
 		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
+		for (Assignment a : assignmentList) {
+			Object[] args = { a.getClassId() };
+			a.setClassName(template.queryForObject(sql2, args, String.class));
+			a.setClassColor(template.queryForObject(sql3, args, String.class));
+		}
 		return assignmentList;
 	}
 

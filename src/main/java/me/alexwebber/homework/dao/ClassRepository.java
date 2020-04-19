@@ -22,8 +22,10 @@ public class ClassRepository {
 	public List<Class> getAllClasses() {
 		String sql = "SELECT * FROM classes";
 		List<Class> classList = template.query(sql, Homework.CLASS);
+		for (Class c : classList) {
+			c.setNumberOfAssignments(numberOfOpenAssignmentsForClass(c.getId()));
+		}
 		return classList;
-
 	}
 
 	public void addClass(Class myClass) {
@@ -33,14 +35,22 @@ public class ClassRepository {
 	}
 
 	public void deleteClass(Integer id) {
-		String sql = "DELETE FROM classes WHERE id = ?";
+		String sql = "DELETE * FROM classes WHERE id = ?";
 		Object[] args = { id };
 		template.update(sql, args);
 	}
 
 	public Class getClassById(Integer id) {
-		String sql = "SELECT FROM classes WHERE id = ?";
+		String sql = "SELECT * FROM classes WHERE id = ?";
 		Object[] args = { id };
 		return template.queryForObject(sql, args, Homework.CLASS);
 	}
+
+	public Integer numberOfOpenAssignmentsForClass(Integer id) {
+		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ? AND completed = false";
+		Object[] args = { id };
+		Integer assignmentCount = template.queryForObject(sql, args, Integer.class);
+		return assignmentCount;
+	}
+
 }

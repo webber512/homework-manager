@@ -38,7 +38,7 @@ public class AssignmentServiceImpl implements AssignmentService {
 
 	@Override
 	public Integer getNumberOfAssignmentsForClass(Integer id) {
-		return assignmentRepository.getNumberOfAssignmentsForClass(id);
+		return assignmentRepository.getNumberOfOpenAssignmentsForClass(id);
 	}
 
 	@Override

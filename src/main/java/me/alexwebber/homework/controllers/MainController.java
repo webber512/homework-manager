@@ -28,6 +28,7 @@ public class MainController {
 	public String getHomeView(Model model, HttpServletRequest request, HttpSession session) {
 		model.addAttribute("title", "Homework Manager");
 		model.addAttribute("classList", classService.getClasses());
+		model.addAttribute("assignmentList", assignmentService.getOpenAssignments());
 		return "home";
 	}
 
