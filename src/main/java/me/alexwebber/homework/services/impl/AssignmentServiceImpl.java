@@ -71,4 +71,14 @@ public class AssignmentServiceImpl implements AssignmentService {
 		assignmentRepository.markAssignmentIncomplete(id);
 	}
 
+	@Override
+	public Integer getNumberOfOpenAssignments() {
+		return assignmentRepository.getNumberOfOpenAssignments();
+	}
+
+	@Override
+	public Integer getNumberOfCompletedAssignments() {
+		return assignmentRepository.getNumberOfCompletedAssignments();
+	}
+
 }

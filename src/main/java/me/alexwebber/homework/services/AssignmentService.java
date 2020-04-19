@@ -19,6 +19,8 @@ public interface AssignmentService {
 	public Assignment getAssignmentById(Integer id);
 
 	public Integer getNumberOfAssignments();
+	
+	public Integer getNumberOfOpenAssignments();
 
 	public Integer getNumberOfAssignmentsForClass(Integer id);
 
@@ -29,4 +31,6 @@ public interface AssignmentService {
 	public void markAssignmentCompleted(Integer id);
 
 	public void markAssignmentIncomplete(Integer id);
+
+	public Integer getNumberOfCompletedAssignments();
 }
