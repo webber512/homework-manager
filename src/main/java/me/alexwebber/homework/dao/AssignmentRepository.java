@@ -79,7 +79,7 @@ public class AssignmentRepository {
 	}
 
 	public void markAssignmentCompleted(Integer id) {
-		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(f.format(new Date()));
 		String sql = "UPDATE assignment SET completedDate = ?, completed = true WHERE id = ?";
 		Object[] args = { f.format(new Date()), id };

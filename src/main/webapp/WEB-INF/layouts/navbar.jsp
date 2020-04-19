@@ -22,6 +22,8 @@
 
 					<li class="nav-item"><a class="nav-link" href="/">Assignments</a></li>
 
+					<li class="nav-item"><a class="nav-link" href="#"><i
+							class="fa fa-plus"></i></a>
 				</ul>
 				<div class="my-2 my-lg-0">
 					<a class="nav-link text-white" href="#">Login</a>

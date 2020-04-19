@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import me.alexwebber.homework.model.Assignment;
 import me.alexwebber.homework.model.Class;
+import me.alexwebber.homework.services.AssignmentService;
 import me.alexwebber.homework.services.ClassService;
 
 @Controller
@@ -19,6 +21,8 @@ public class MainController {
 
 	@Autowired
 	ClassService classService;
+	@Autowired
+	AssignmentService assignmentService;
 
 	@GetMapping(value = { "/home", "/" })
 	public String getHomeView(Model model, HttpServletRequest request, HttpSession session) {
@@ -40,5 +44,19 @@ public class MainController {
 	public String postAddBuilding(HttpSession session, Model model, Class myClass) {
 		classService.addClass(model, myClass);
 		return "redirect:/class/new";
+	}
+
+	@GetMapping(value = { "/assignment/new" })
+	public String getNewAssignmentModel(Model model, HttpServletRequest request, HttpSession session) {
+		model.addAttribute("title", "New Assignment");
+		model.addAttribute("classList", classService.getClasses());
+		model.addAttribute("command", new Assignment());
+		return "assignments";
+	}
+
+	@PostMapping(value = { "/assignment/new" })
+	public String postAddAssignment(HttpSession session, Model model, Assignment assignment) {
+		assignmentService.addAssignment(model, assignment);
+		return "redirect:/assignment/new";
 	}
 }
