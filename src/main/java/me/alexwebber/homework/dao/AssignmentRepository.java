@@ -82,10 +82,10 @@ public class AssignmentRepository {
 
 	public List<Assignment> getOpenAssignments() {
 		String sql = "SELECT * FROM assignment WHERE completed = false";
-		String sql2 = "SELECT code FROM classes WHERE id = ?";
-		String sql3 = "SELECT color FROM classes WHERE id = ?";
 		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
 		for (Assignment a : assignmentList) {
+			String sql2 = "SELECT code FROM classes WHERE id = ?";
+			String sql3 = "SELECT color FROM classes WHERE id = ?";
 			Object[] args = { a.getClassId() };
 			a.setClassName(template.queryForObject(sql2, args, String.class));
 			a.setClassColor(template.queryForObject(sql3, args, String.class));

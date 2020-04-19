@@ -28,8 +28,17 @@ public class MainController {
 	public String getHomeView(Model model, HttpServletRequest request, HttpSession session) {
 		model.addAttribute("title", "Homework Manager");
 		model.addAttribute("classList", classService.getClasses());
+		model.addAttribute("command", new Assignment());
 		model.addAttribute("assignmentList", assignmentService.getOpenAssignments());
 		return "home";
+	}
+
+	@PostMapping(value = { "/assignment/new" })
+	public String postAddAssignment(HttpSession session, Model model, Assignment assignment) {
+		model.addAttribute("classList", classService.getClasses());
+		assignmentService.addAssignment(model, assignment);
+		model.addAttribute("assignmentList", assignmentService.getOpenAssignments());
+		return "redirect:/home";
 	}
 
 	@GetMapping(value = { "/classes" })
@@ -55,9 +64,4 @@ public class MainController {
 		return "assignments";
 	}
 
-	@PostMapping(value = { "/assignment/new" })
-	public String postAddAssignment(HttpSession session, Model model, Assignment assignment) {
-		assignmentService.addAssignment(model, assignment);
-		return "redirect:/assignment/new";
-	}
 }

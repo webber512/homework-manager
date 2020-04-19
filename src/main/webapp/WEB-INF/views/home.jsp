@@ -71,7 +71,103 @@
 		<div class="col-sm-3">
 			<br />
 			<h3>Statistics</h3>
+			<div class="progress">
+				<div class="progress-bar progress-bar-striped progress-bar-animated"
+					role="progressbar" aria-valuenow="75" aria-valuemin="0"
+					aria-valuemax="100" style="width: 75%"></div>
+			</div>
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Add an
+					Assignment</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row container-fluid">
+					<div class="col-sm-12">
+						<form:form method="post" id="newAssignmentForm"
+							modelAttribute="command"
+							action="${pageContext.request.contextPath}/assignment/new">
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="code">Class</label>
+										<form:select class="form-control" path="classId">
+											<option value="0" selected>Choose a class..</option>
+											<c:forEach var="classs" items="${classList}">
+												<option value="${classs.id}">${classs.name}</option>
+											</c:forEach>
+										</form:select>
+										<small id="classIdHelp" class="form-text text-muted">Select
+											the class the assignment is for.</small>
+									</div>
+									<div class="col-md-6">
+										<label for="color">Assignment Name</label>
+										<form:input path="name" type="text" class="form-control"></form:input>
+										<small id="colorHelp" class="form-text text-muted">What
+											is the assignment called?</small>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<label for="type">Assignment Type</label>
+										<form:select class="form-control" path="type">
+											<option value="Homework" selected>Homework</option>
+											<option value="Project">Project</option>
+											<option value="Test">Test</option>
+											<option value="Quiz">Quiz</option>
+											<option value="Lab">Homework</option>
+										</form:select>
+										<small id="typeHelp" class="form-text text-muted">What
+											type of assignment is this?</small>
+									</div>
+									<div class="col-sm-6">
+										<label for="dueDate">Due Date</label>
+										<form:input class="form-control" type="date" path="dueDate"></form:input>
+										<small id="dueDateHelp" class="form-text text-muted">When
+											is the assignment due?</small>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<label for="description">Description</label>
+										<form:input class="form-control" path="description"
+											type="textarea"></form:input>
+									</div>
+								</div>
+							</div>
+						</form:form>
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" id="submitForm">Add
+					Assignment</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+window.addEventListener("DOMContentLoaded", (event) => {
+			let submitBtn = document.getElementById("submitForm")
+			submitBtn.addEventListener("click", (event) => {
+				event.preventDefault();
+				let form = document.getElementById("newAssignmentForm"); 
+				form.submit();
+			});
+		});
+	</script>
 <%@ include file="/WEB-INF/layouts/footer.jsp"%>

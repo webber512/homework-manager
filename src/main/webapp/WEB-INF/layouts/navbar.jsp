@@ -19,12 +19,8 @@
 					</a>
 					<li class="nav-item"><a class="nav-link" href="/classes">Classes</a></li>
 
-
-					<li class="nav-item"><a class="nav-link"
-						href="/assignment/new">Assignments</a></li>
-
-					<li class="nav-item"><a class="nav-link" href="#"><i
-							class="fa fa-plus"></i></a>
+					<li class="nav-item"><a class="nav-link" data-toggle="modal"
+						data-target="#exampleModal">Add Assignment</a>
 				</ul>
 				<div class="my-2 my-lg-0">
 					<a class="nav-link text-white" href="#">Login</a>
