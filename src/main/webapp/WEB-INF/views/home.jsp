@@ -14,6 +14,26 @@
 					</c:forEach>
 				</ul>
 			</nav>
+			<div class="row">
+				<div class="col-sm-12">
+					<br />
+					<h3>Statistics</h3>
+					<p>
+						Number of open assignments: ${numberOfOpenAssignments}<br />
+						Number of completed assignments: ${numberOfCompletedAssignments}<br />
+						Number of total assignments: ${numberOfAssignments}
+					</p>
+					You are ${progress}% done!
+					<div class="progress">
+						<div
+							class="progress-bar progress-bar-striped progress-bar-animated"
+							role="progressbar"
+							aria-valuenow="${numberOfCompletedAssignments}" aria-valuemin="0"
+							aria-valuemax="${numberOfAssignments}"
+							style="width: ${progress}%"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="col-sm-9">
 			<br />
@@ -22,12 +42,11 @@
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<a class="nav-item nav-link active" id="nav-home-tab"
 						data-toggle="tab" href="#nav-home" role="tab"
-						aria-controls="nav-home" aria-selected="true">Current
-						</a> <a class="nav-item nav-link" id="nav-profile-tab"
-						data-toggle="tab" href="#nav-profile" role="tab"
-						aria-controls="nav-profile" aria-selected="false">Calendar
-						</a><a class="nav-item nav-link" id="nav-all-tab"
-						data-toggle="tab" href="#nav-all" role="tab"
+						aria-controls="nav-home" aria-selected="true">Current </a> <a
+						class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
+						href="#nav-profile" role="tab" aria-controls="nav-profile"
+						aria-selected="false">Calendar </a><a class="nav-item nav-link"
+						id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab"
 						aria-controls="nav-all" aria-selected="false">All</a>
 				</div>
 			</nav>
@@ -51,24 +70,6 @@
 					</div>
 				</div>
 
-			</div>
-		</div>
-	</div>
-
-	<div class="row container-fluid">
-		<div class="col-sm-3">
-			<br />
-			<h3>Statistics</h3>
-			<p>Number of open assignments: ${numberOfOpenAssignments}</p>
-			<p>Number of completed assignments:
-				${numberOfCompletedAssignments}</p>
-			<p>Number of total assignments: ${numberOfAssignments}</p>
-			<p>Progress: ${progress}%</p>
-			<div class="progress">
-				<div class="progress-bar progress-bar-striped progress-bar-animated"
-					role="progressbar" aria-valuenow="${numberOfCompletedAssignments}"
-					aria-valuemin="0" aria-valuemax="${numberOfAssignments}"
-					style="width: ${progress}%"></div>
 			</div>
 		</div>
 	</div>
