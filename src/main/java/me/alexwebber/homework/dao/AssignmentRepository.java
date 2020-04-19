@@ -54,7 +54,7 @@ public class AssignmentRepository {
 	}
 
 	public Integer getNumberOfOpenAssignments() {
-		String sql = "SELECT COUNT(*) FROM assignment WHERE completed = false";
+		String sql = "SELECT COUNT(*) FROM assignment WHERE completed = 'false'";
 		Integer assignmentCount = template.queryForObject(sql, Integer.class);
 		return assignmentCount;
 	}
@@ -66,7 +66,7 @@ public class AssignmentRepository {
 	}
 
 	public Integer getNumberOfOpenAssignmentsForClass(Integer id) {
-		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ? AND completed = false";
+		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ? AND completed = 'false'";
 		Object[] args = { id };
 		Integer assignmentCount = template.queryForObject(sql, args, Integer.class);
 		classRepository.getClassById(id).setNumberOfAssignments(assignmentCount);
@@ -87,13 +87,13 @@ public class AssignmentRepository {
 	}
 
 	public List<Assignment> getCompletedAssignments() {
-		String sql = "SELECT * FROM assignment WHERE completed = true";
+		String sql = "SELECT * FROM assignment WHERE completed = 'true'";
 		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
 		return assignmentList;
 	}
 
 	public List<Assignment> getOpenAssignments() {
-		String sql = "SELECT * FROM assignment WHERE completed = false";
+		String sql = "SELECT * FROM assignment WHERE completed = 'false'";
 		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
 		for (Assignment a : assignmentList) {
 			String sql2 = "SELECT code FROM classes WHERE id = ?";
@@ -108,13 +108,13 @@ public class AssignmentRepository {
 	public void markAssignmentCompleted(Integer id) {
 		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println(f.format(new Date()));
-		String sql = "UPDATE assignment SET completedDate = ?, completed = true WHERE id = ?";
+		String sql = "UPDATE assignment SET completedDate = ?, completed = 'true' WHERE id = ?";
 		Object[] args = { f.format(new Date()), id };
 		template.update(sql, args);
 	}
 
 	public void markAssignmentIncomplete(Integer id) {
-		String sql = "UPDATE assignment SET completedDate = ?, completed = false WHERE id = ?";
+		String sql = "UPDATE assignment SET completedDate = ?, completed = 'false' WHERE id = ?";
 		Object[] args = { "", id };
 		template.update(sql, args);
 	}
