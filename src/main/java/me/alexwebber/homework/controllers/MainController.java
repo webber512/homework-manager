@@ -34,12 +34,11 @@ public class MainController {
 
 		double progress = (double) assignmentService.getNumberOfCompletedAssignments()
 				/ assignmentService.getNumberOfAssignments();
-		System.out.println(progress);
 		model.addAttribute("progress", progress * 100);
-
 		model.addAttribute("classList", classService.getClasses());
 		model.addAttribute("command", new Assignment());
-		model.addAttribute("assignmentList", assignmentService.getOpenAssignments());
+		model.addAttribute("openAssignmentList", assignmentService.getOpenAssignments());
+		model.addAttribute("allAssignmentList", assignmentService.getAllAssignments());
 		return "home";
 	}
 

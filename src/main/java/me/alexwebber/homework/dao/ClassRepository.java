@@ -47,7 +47,7 @@ public class ClassRepository {
 	}
 
 	public Integer numberOfOpenAssignmentsForClass(Integer id) {
-		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ? AND completed = false";
+		String sql = "SELECT COUNT(*) FROM assignment WHERE classId = ? AND completed = 'false'";
 		Object[] args = { id };
 		Integer assignmentCount = template.queryForObject(sql, args, Integer.class);
 		return assignmentCount;

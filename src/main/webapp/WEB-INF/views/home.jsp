@@ -22,10 +22,13 @@
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<a class="nav-item nav-link active" id="nav-home-tab"
 						data-toggle="tab" href="#nav-home" role="tab"
-						aria-controls="nav-home" aria-selected="true">List View</a> <a
-						class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-						href="#nav-profile" role="tab" aria-controls="nav-profile"
-						aria-selected="false">Calendar View</a>
+						aria-controls="nav-home" aria-selected="true">Current
+						Assignments</a> <a class="nav-item nav-link" id="nav-profile-tab"
+						data-toggle="tab" href="#nav-profile" role="tab"
+						aria-controls="nav-profile" aria-selected="false">Calendar
+						View</a><a class="nav-item nav-link" id="nav-all-tab"
+						data-toggle="tab" href="#nav-all" role="tab"
+						aria-controls="nav-all" aria-selected="false">All Assignments</a>
 				</div>
 			</nav>
 			<div class="tab-content" id="nav-tabContent">
@@ -45,7 +48,42 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="assignment" items="${assignmentList}">
+									<c:forEach var="assignment" items="${openAssignmentList}">
+										<tr>
+											<td><span
+												style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${assignment.classColor}"></span>&nbsp;&nbsp;${assignment.name}</td>
+											<td>${assignment.className}</td>
+											<td>${assignment.type}</td>
+											<td>${assignment.dueDate}</td>
+											<td>${assignment.description}</td>
+											<td><a href="/assignment/done/${assignment.id}"><i
+													class="far fa-square"></i></a></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="nav-profile" role="tabpanel"
+					aria-labelledby="nav-profile-tab">Calendar View</div>
+				<div class="tab-pane fade" id="nav-all" role="tabpanel"
+					aria-labelledby="nav-all-tab">
+					<div class="row">
+						<div class="col-sm-12">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Class</th>
+										<th>Type</th>
+										<th>Due Date</th>
+										<th>Description</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="assignment" items="${allAssignmentList}">
 										<tr>
 											<td><span
 												style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${assignment.classColor}"></span>&nbsp;&nbsp;${assignment.name}</td>
@@ -61,8 +99,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane fade" id="nav-profile" role="tabpanel"
-					aria-labelledby="nav-profile-tab">Calendar View</div>
+
 			</div>
 		</div>
 	</div>
