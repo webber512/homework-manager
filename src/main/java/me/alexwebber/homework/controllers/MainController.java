@@ -59,6 +59,12 @@ public class MainController {
 		return "redirect:/home";
 	}
 
+	@GetMapping(value = { "/assignment/undo/{id}" })
+	public String postUnDoAssignment(HttpSession session, Model model, @PathVariable Integer id) {
+		assignmentService.markAssignmentIncomplete(id);
+		return "redirect:/home";
+	}
+
 	@GetMapping(value = { "/classes" })
 	public String getNewClassView(Model model, HttpServletRequest request, HttpSession session) {
 		model.addAttribute("title", "Classes");

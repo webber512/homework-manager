@@ -121,7 +121,7 @@ public class AssignmentRepository {
 
 	public void markAssignmentIncomplete(Integer id) {
 		String sql = "UPDATE assignment SET completedDate = ?, completed = 'false' WHERE id = ?";
-		Object[] args = { "", id };
+		Object[] args = { null, id };
 		template.update(sql, args);
 	}
 }

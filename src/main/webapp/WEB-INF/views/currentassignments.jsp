@@ -31,6 +31,8 @@
 
 <script>
 	$(document).ready(function() {
-		$('#currentAssignmentTable').DataTable();
+		$('#currentAssignmentTable').DataTable({
+			"order" : [ [ 3, "asc" ] ]
+		});
 	});
 </script>
