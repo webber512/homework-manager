@@ -12,13 +12,12 @@
 								style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${classs.color}"></span>&nbsp;&nbsp;${classs.name}
 								<span class="badge badge-primary">${classs.numberOfAssignments}</span></a></li>
 					</c:forEach>
-
 				</ul>
 			</nav>
 		</div>
 		<div class="col-sm-9">
 			<br />
-			<h2>Assignment List/Calendar View</h2>
+			<h2>Open Assignments</h2>
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<a class="nav-item nav-link active" id="nav-home-tab"
@@ -67,6 +66,12 @@
 			</div>
 		</div>
 	</div>
-</div>
 
+	<div class="row container-fluid">
+		<div class="col-sm-3">
+			<br />
+			<h3>Statistics</h3>
+		</div>
+	</div>
+</div>
 <%@ include file="/WEB-INF/layouts/footer.jsp"%>
