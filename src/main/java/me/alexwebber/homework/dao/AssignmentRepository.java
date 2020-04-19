@@ -60,7 +60,7 @@ public class AssignmentRepository {
 	}
 
 	public Integer getNumberOfCompletedAssignments() {
-		String sql = "SELECT COUNT(*) FROM assignment WHERE completed = true";
+		String sql = "SELECT COUNT(*) FROM assignment WHERE completed = 'true'";
 		Integer assignmentCount = template.queryForObject(sql, Integer.class);
 		return assignmentCount;
 	}

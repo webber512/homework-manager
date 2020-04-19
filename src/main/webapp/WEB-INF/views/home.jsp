@@ -75,6 +75,7 @@
 			<p>Number of completed assignments:
 				${numberOfCompletedAssignments}</p>
 			<p>Number of total assignments: ${numberOfAssignments}</p>
+			<p>Progress: ${progress}%</p>
 			<div class="progress">
 				<div class="progress-bar progress-bar-striped progress-bar-animated"
 					role="progressbar" aria-valuenow="${numberOfCompletedAssignments}"

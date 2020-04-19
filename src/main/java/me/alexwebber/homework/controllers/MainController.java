@@ -31,8 +31,10 @@ public class MainController {
 		model.addAttribute("numberOfAssignments", assignmentService.getNumberOfAssignments());
 		model.addAttribute("numberOfCompletedAssignments", assignmentService.getNumberOfCompletedAssignments());
 
-		model.addAttribute("progress",
-				(assignmentService.getNumberOfCompletedAssignments() / assignmentService.getNumberOfAssignments()));
+		double progress = (double) assignmentService.getNumberOfCompletedAssignments()
+				/ assignmentService.getNumberOfAssignments();
+		System.out.println(progress);
+		model.addAttribute("progress", progress*100);
 
 		model.addAttribute("classList", classService.getClasses());
 		model.addAttribute("command", new Assignment());
