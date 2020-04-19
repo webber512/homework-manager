@@ -98,7 +98,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label for="code">Class</label>
-										<form:select class="form-control" path="classId">
+										<form:select class="form-control" path="classId" required>
 											<option value="0" selected>Choose a class..</option>
 											<c:forEach var="classs" items="${classList}">
 												<option value="${classs.id}">${classs.name}</option>
@@ -109,7 +109,8 @@
 									</div>
 									<div class="col-md-6">
 										<label for="color">Assignment Name</label>
-										<form:input path="name" type="text" class="form-control"></form:input>
+										<form:input path="name" type="text" class="form-control"
+											required></form:input>
 										<small id="colorHelp" class="form-text text-muted">What
 											is the assignment called?</small>
 									</div>
@@ -117,7 +118,7 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<label for="type">Assignment Type</label>
-										<form:select class="form-control" path="type">
+										<form:select class="form-control" path="type" required>
 											<option value="Homework" selected>Homework</option>
 											<option value="Project">Project</option>
 											<option value="Test">Test</option>
@@ -129,7 +130,8 @@
 									</div>
 									<div class="col-sm-6">
 										<label for="dueDate">Due Date</label>
-										<form:input class="form-control" type="date" path="dueDate"></form:input>
+										<form:input class="form-control" type="date" path="dueDate"
+											required></form:input>
 										<small id="dueDateHelp" class="form-text text-muted">When
 											is the assignment due?</small>
 									</div>
