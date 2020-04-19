@@ -1,6 +1,7 @@
 <%@ include file="/WEB-INF/layouts/include.jsp"%>
+<br />
 <div class="table-responsive">
-	<table class="table">
+	<table class="table" id="allAssignmentTable">
 		<thead>
 			<tr>
 				<th>Completed</th>
@@ -30,3 +31,9 @@
 		</tbody>
 	</table>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('#allAssignmentTable').DataTable();
+	});
+</script>

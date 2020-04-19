@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/layouts/include.jsp"%>
-
+<br />
 <div class="table-responsive">
-	<table class="table">
+	<table class="table" id="currentAssignmentTable">
 		<thead>
 			<tr>
 				<th>Name</th>
@@ -28,3 +28,9 @@
 		</tbody>
 	</table>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('#currentAssignmentTable').DataTable();
+	});
+</script>
