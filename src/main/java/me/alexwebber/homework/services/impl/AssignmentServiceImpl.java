@@ -53,26 +53,22 @@ public class AssignmentServiceImpl implements AssignmentService {
 
 	@Override
 	public List<Assignment> getCompletedAssignments() {
-		// TODO Auto-generated method stub
-		return null;
+		return assignmentRepository.getCompletedAssignments();
 	}
 
 	@Override
 	public List<Assignment> getOpenAssignments() {
-		// TODO Auto-generated method stub
-		return null;
+		return assignmentRepository.getOpenAssignments();
 	}
 
 	@Override
 	public void markAssignmentCompleted(Integer id) {
-		// TODO Auto-generated method stub
-		
+		assignmentRepository.markAssignmentCompleted(id);
 	}
 
 	@Override
 	public void markAssignmentIncomplete(Integer id) {
-		// TODO Auto-generated method stub
-		
+		assignmentRepository.markAssignmentIncomplete(id);
 	}
 
 }

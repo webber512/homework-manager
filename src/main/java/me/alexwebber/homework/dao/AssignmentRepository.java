@@ -1,5 +1,7 @@
 package me.alexwebber.homework.dao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +63,32 @@ public class AssignmentRepository {
 	public void deleteAssignment(Integer id) {
 		String sql = "DELETE FROM assignment WHERE id = ?";
 		Object[] args = { id };
+		template.update(sql, args);
+	}
+
+	public List<Assignment> getCompletedAssignments() {
+		String sql = "SELECT * FROM assignment WHERE completed = true";
+		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
+		return assignmentList;
+	}
+
+	public List<Assignment> getOpenAssignments() {
+		String sql = "SELECT * FROM assignment WHERE completed = false";
+		List<Assignment> assignmentList = template.query(sql, Homework.ASSIGNMENT);
+		return assignmentList;
+	}
+
+	public void markAssignmentCompleted(Integer id) {
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+		System.out.println(f.format(new Date()));
+		String sql = "UPDATE assignment SET completedDate = ?, completed = true WHERE id = ?";
+		Object[] args = { f.format(new Date()), id };
+		template.update(sql, args);
+	}
+
+	public void markAssignmentIncomplete(Integer id) {
+		String sql = "UPDATE assignment SET completedDate = ?, completed = false WHERE id = ?";
+		Object[] args = { "", id };
 		template.update(sql, args);
 	}
 }
