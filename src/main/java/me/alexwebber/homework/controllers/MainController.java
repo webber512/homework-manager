@@ -1,5 +1,6 @@
 package me.alexwebber.homework.controllers;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,7 +35,9 @@ public class MainController {
 
 		double progress = (double) assignmentService.getNumberOfCompletedAssignments()
 				/ assignmentService.getNumberOfAssignments();
-		model.addAttribute("progress", progress * 100);
+		double progressPercent = progress * 100;
+		DecimalFormat df = new DecimalFormat("0.00");
+		model.addAttribute("progress", df.format(progressPercent));
 		model.addAttribute("classList", classService.getClasses());
 		model.addAttribute("command", new Assignment());
 		model.addAttribute("openAssignmentList", assignmentService.getOpenAssignments());

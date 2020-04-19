@@ -74,6 +74,7 @@
 							<table class="table">
 								<thead>
 									<tr>
+										<th>Completed</th>
 										<th>Name</th>
 										<th>Class</th>
 										<th>Type</th>
@@ -85,6 +86,7 @@
 								<tbody>
 									<c:forEach var="assignment" items="${allAssignmentList}">
 										<tr>
+											<td>${assignment.completed}</td>
 											<td><span
 												style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${assignment.classColor}"></span>&nbsp;&nbsp;${assignment.name}</td>
 											<td>${assignment.className}</td>
