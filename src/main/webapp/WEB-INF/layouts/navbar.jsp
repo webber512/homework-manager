@@ -17,10 +17,9 @@
 					<li class="nav-item active"><a class="nav-link" href="/">Home
 							<span class="sr-only">(current)</span>
 					</a>
-					<li class="nav-item"><a class="nav-link" href="/classes">Classes</a></li>
-
 					<li class="nav-item"><a class="nav-link" data-toggle="modal"
 						data-target="#exampleModal">Add Assignment</a>
+					<li class="nav-item"><a class="nav-link" href="/classes">Classes</a></li>
 				</ul>
 				<div class="my-2 my-lg-0">
 					<a class="nav-link text-white" href="#">Login</a>
