@@ -30,7 +30,7 @@
 							role="progressbar"
 							aria-valuenow="${numberOfCompletedAssignments}" aria-valuemin="0"
 							aria-valuemax="${numberOfAssignments}"
-							style="width: ${progress}%"></div>
+							style="width: ${progress}%">${progress}%</div>
 					</div>
 				</div>
 			</div>
