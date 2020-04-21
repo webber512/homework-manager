@@ -1,4 +1,4 @@
-package me.alexwebber.homework.service;
+package me.alexwebber.homework.config;
 
 import java.util.Arrays;
 import java.util.List;

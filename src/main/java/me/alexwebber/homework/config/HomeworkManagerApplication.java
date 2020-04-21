@@ -1,4 +1,4 @@
-package me.alexwebber.homework.service;
+package me.alexwebber.homework.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
