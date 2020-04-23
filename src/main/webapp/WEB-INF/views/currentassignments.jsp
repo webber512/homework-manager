@@ -22,7 +22,11 @@
 					<td>${assignment.dueDate}</td>
 					<td>${assignment.description}</td>
 					<td><a href="/assignment/done/${assignment.id}"><i
-							class="far fa-square"></i>&nbsp;Complete</a></td>
+							class="far fa-square"></i></a>&nbsp;&nbsp;&nbsp;<a
+						href="/assignment?action=edit&id=${assignment.id}"><i
+							class="fas fa-pencil-alt"></i></a>&nbsp;&nbsp;&nbsp;<a
+						href="/assignment?action=delete&id=${assignment.id}"><i
+							class="fas fa-trash"></i></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

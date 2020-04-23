@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
 import me.alexwebber.homework.model.Assignment;
 import me.alexwebber.homework.util.Homework;
@@ -122,6 +123,13 @@ public class AssignmentRepository {
 	public void markAssignmentIncomplete(Integer id) {
 		String sql = "UPDATE assignment SET completedDate = ?, completed = 'false' WHERE id = ?";
 		Object[] args = { null, id };
+		template.update(sql, args);
+	}
+
+	public void updateAssignment(Model model, Assignment assignment) {
+		String sql = "UPDATE assignment SET name = ?, classId = ?, dueDate = ?, type = ?, description = ? WHERE id = ?";
+		Object[] args = { assignment.getName(), assignment.getClassId(), assignment.getDueDate(), assignment.getType(),
+				assignment.getDescription(), assignment.getId() };
 		template.update(sql, args);
 	}
 }

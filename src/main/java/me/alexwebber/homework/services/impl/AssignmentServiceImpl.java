@@ -81,4 +81,9 @@ public class AssignmentServiceImpl implements AssignmentService {
 		return assignmentRepository.getNumberOfCompletedAssignments();
 	}
 
+	@Override
+	public void updateAssignment(Model model, Assignment assignment) {
+		assignmentRepository.updateAssignment(model, assignment);
+	}
+
 }

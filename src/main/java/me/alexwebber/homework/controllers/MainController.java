@@ -45,6 +45,32 @@ public class MainController {
 		return "home";
 	}
 
+	@GetMapping(value = "/assignment")
+	public String getAddEditAssignment(Model model, HttpServletRequest request, HttpSession session, String action,
+			String id) {
+		if (action.equals("edit")) {
+			Assignment assignment = assignmentService.getAssignmentById(Integer.parseInt(id));
+			if (assignment != null) {
+				model.addAttribute("pageAction", "Edit Assignment " + assignment.getName());
+				model.addAttribute("classList", classService.getClasses());
+				model.addAttribute("command", assignment);
+				return "editAssignment";
+			}
+		} else if (action.equals("delete")) {
+			assignmentService.deleteAssignment(Integer.parseInt(id));
+		}
+		return "redirect:/home";
+	}
+
+	@PostMapping(value = { "/assignment" })
+	public String postEditAssignment(HttpSession session, Model model, Assignment assignment) {
+		if (assignment != null && assignment.getId() != null) {
+			assignmentService.updateAssignment(model, assignment);
+		}
+		return "redirect:/home";
+
+	}
+
 	@PostMapping(value = { "/assignment/new" })
 	public String postAddAssignment(HttpSession session, Model model, Assignment assignment) {
 		model.addAttribute("classList", classService.getClasses());
