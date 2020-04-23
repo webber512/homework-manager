@@ -16,6 +16,7 @@ import me.alexwebber.homework.model.Assignment;
 import me.alexwebber.homework.model.Class;
 import me.alexwebber.homework.services.AssignmentService;
 import me.alexwebber.homework.services.ClassService;
+import me.alexwebber.homework.util.ModelHelper;
 
 @Controller
 public class MainController {
@@ -54,6 +55,8 @@ public class MainController {
 				model.addAttribute("classList", classService.getClasses());
 				model.addAttribute("command", assignment);
 				return "editAssignment";
+			} else {
+				return "home";
 			}
 		} else if (action.equals("delete")) {
 			assignmentService.deleteAssignment(Integer.parseInt(id));
@@ -69,6 +72,8 @@ public class MainController {
 	public String postEditAssignment(HttpSession session, Model model, Assignment assignment) {
 		if (assignment != null && assignment.getId() != null) {
 			assignmentService.updateAssignment(model, assignment);
+		} else {
+			return "home";
 		}
 		return "redirect:/home";
 

@@ -2,8 +2,11 @@
 	<%@ include file="/WEB-INF/layouts/navbar.jsp"%>
 	<div class="row container-fluid">
 		<div class="col-sm-12">
-		<br/>
-		<h2>${pageAction}</h2>
+			<br />
+			<h2>${pageAction}</h2>
+			<%@ include file="/WEB-INF/layouts/message.jsp"%>
+
+
 			<form:form method="post" id="newAssignmentForm"
 				modelAttribute="command"
 				action="${pageContext.request.contextPath}/assignment">
