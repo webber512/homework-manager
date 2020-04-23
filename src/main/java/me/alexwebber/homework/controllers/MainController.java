@@ -58,6 +58,10 @@ public class MainController {
 			}
 		} else if (action.equals("delete")) {
 			assignmentService.deleteAssignment(Integer.parseInt(id));
+		} else if (action.equals("complete")) {
+			assignmentService.markAssignmentCompleted(Integer.parseInt(id));
+		} else if (action.equals("uncomplete")) {
+			assignmentService.markAssignmentIncomplete(Integer.parseInt(id));
 		}
 		return "redirect:/home";
 	}

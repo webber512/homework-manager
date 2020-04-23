@@ -21,7 +21,7 @@
 					<td>${assignment.type}</td>
 					<td>${assignment.dueDate}</td>
 					<td>${assignment.description}</td>
-					<td><a href="/assignment/done/${assignment.id}"><i
+					<td><a href="/assignment?action=complete&id=${assignment.id}"><i
 							class="far fa-square"></i></a>&nbsp;&nbsp;&nbsp;<a
 						href="/assignment?action=edit&id=${assignment.id}"><i
 							class="fas fa-pencil-alt"></i></a>&nbsp;&nbsp;&nbsp;<a
