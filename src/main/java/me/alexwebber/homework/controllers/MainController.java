@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import me.alexwebber.homework.model.Assignment;
@@ -80,18 +79,6 @@ public class MainController {
 		model.addAttribute("classList", classService.getClasses());
 		assignmentService.addAssignment(model, assignment);
 		model.addAttribute("assignmentList", assignmentService.getOpenAssignments());
-		return "redirect:/home";
-	}
-
-	@GetMapping(value = { "/assignment/done/{id}" })
-	public String postCompleteAssignment(HttpSession session, Model model, @PathVariable Integer id) {
-		assignmentService.markAssignmentCompleted(id);
-		return "redirect:/home";
-	}
-
-	@GetMapping(value = { "/assignment/undo/{id}" })
-	public String postUnDoAssignment(HttpSession session, Model model, @PathVariable Integer id) {
-		assignmentService.markAssignmentIncomplete(id);
 		return "redirect:/home";
 	}
 
