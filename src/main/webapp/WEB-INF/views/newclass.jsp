@@ -19,6 +19,7 @@
 			<br />
 
 			<h3>Add a new Class</h3>
+			<h3>View Table of Classes (delete, edit, etc)</h3>
 			<form:form method="post" id="newClassForm" modelAttribute="command"
 				action="${pageContext.request.contextPath}/class/new">
 				<div class="form-group">
