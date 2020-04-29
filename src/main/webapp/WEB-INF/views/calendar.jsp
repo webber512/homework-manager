@@ -20,3 +20,9 @@
 		calendar.render();
 	});
 </script>
+
+<style>
+.fc-today {
+	background-color: #e5e5e5;
+}
+</style>
