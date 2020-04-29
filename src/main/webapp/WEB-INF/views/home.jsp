@@ -134,6 +134,8 @@
 											is the assignment due?</small>
 									</div>
 								</div>
+								<form:hidden class="form-control" path="id" />
+
 								<div class="row">
 									<div class="col-sm-12">
 										<label for="description">Description</label>
@@ -169,5 +171,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
 				form.submit();
 			});
 		});
+	
+$(document).ready(function() {
+
+	  if(window.location.href.indexOf('#exampleModal') != -1) {
+	    $('#exampleModal').modal('show');
+	  }
+
+	});
 	</script>
+
 <%@ include file="/WEB-INF/layouts/footer.jsp"%>

@@ -26,12 +26,15 @@
 					<td>${assignment.dueDate}</td>
 					<td>${assignment.description}</td>
 					<td><c:if test="${not assignment.completed}">
-							<a href="/assignment/done/${assignment.id}"><i
-								class="far fa-check-square"></i>&nbsp; Mark Complete</a>
+							<a href="/assignment?action=complete&id=${assignment.id}"><i
+								class="far fa-square"></i>&nbsp;&nbsp;&nbsp;</a>
 						</c:if> <c:if test="${assignment.completed}">
-							<a href="/assignment/undo/${assignment.id}"><i
-								class="far fa-square"></i>&nbsp; Mark To-Do</a>
-						</c:if></td>
+							<a href="/assignment?action=uncomplete&id=${assignment.id}"><i
+								class="far fa-check-square"></i>&nbsp;&nbsp;&nbsp;</a>
+						</c:if><a href="/assignment?action=edit&id=${assignment.id}"><i
+							class="fas fa-pencil-alt"></i></a>&nbsp;&nbsp;&nbsp;<a
+						href="/assignment?action=delete&id=${assignment.id}"><i
+							class="fas fa-trash"></i></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

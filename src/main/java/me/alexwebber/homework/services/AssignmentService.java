@@ -33,4 +33,6 @@ public interface AssignmentService {
 	public void markAssignmentIncomplete(Integer id);
 
 	public Integer getNumberOfCompletedAssignments();
+
+	public void updateAssignment(Model model, Assignment assignment);
 }
