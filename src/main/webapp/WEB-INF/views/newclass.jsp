@@ -1,3 +1,4 @@
+<%@ include file="/WEB-INF/layouts/include.jsp"%>
 <form:form method="post" id="newClassForm" modelAttribute="command"
 	action="${pageContext.request.contextPath}/class/new">
 	<div class="form-group">
