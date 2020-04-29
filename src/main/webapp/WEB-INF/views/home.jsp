@@ -41,17 +41,17 @@
 			<nav>
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<a class="nav-item nav-link active" id="nav-home-tab"
-						data-toggle="tab" href="#nav-home" role="tab"
+						data-toggle="tab" href="#nav-current" role="tab"
 						aria-controls="nav-home" aria-selected="true">Current </a> <a
 						class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-						href="#nav-profile" role="tab" aria-controls="nav-profile"
+						href="#nav-calendar" role="tab" aria-controls="nav-profile"
 						aria-selected="false">Calendar </a><a class="nav-item nav-link"
 						id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab"
 						aria-controls="nav-all" aria-selected="false">All</a>
 				</div>
 			</nav>
 			<div class="tab-content" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+				<div class="tab-pane fade show active" id="nav-current" role="tabpanel"
 					aria-labelledby="nav-home-tab">
 					<div class="row">
 						<div class="col-sm-12">
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane fade" id="nav-profile" role="tabpanel"
+				<div class="tab-pane fade" id="nav-calendar" role="tabpanel"
 					aria-labelledby="nav-profile-tab">
 					<div class="row">
 						<div class="col-sm-12">

@@ -92,13 +92,13 @@ public class MainController {
 		List<Class> classList = classService.getClasses();
 		model.addAttribute("classList", classList);
 		model.addAttribute("command", new Class());
-		return "newclass";
+		return "classes";
 	}
 
-	@PostMapping(value = { "/classes" })
+	@PostMapping(value = { "/class/new" })
 	public String postAddBuilding(HttpSession session, Model model, Class myClass) {
 		classService.addClass(model, myClass);
-		return "redirect:/class/new";
+		return "redirect:/home";
 	}
 
 }
