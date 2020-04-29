@@ -60,7 +60,12 @@
 					</div>
 				</div>
 				<div class="tab-pane fade" id="nav-profile" role="tabpanel"
-					aria-labelledby="nav-profile-tab">Calendar View</div>
+					aria-labelledby="nav-profile-tab">
+					<div class="row">
+						<div class="col-sm-12">
+							<%@ include file="/WEB-INF/views/calendar.jsp"%></div>
+					</div>
+				</div>
 				<div class="tab-pane fade" id="nav-all" role="tabpanel"
 					aria-labelledby="nav-all-tab">
 					<div class="row">

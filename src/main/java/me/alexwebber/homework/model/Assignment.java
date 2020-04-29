@@ -1,16 +1,21 @@
 package me.alexwebber.homework.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Assignment {
 
-	private Integer id;
+	private transient Integer id;
+	@SerializedName("title")
 	private String name;
-	private String type;
-	private Integer classId;
-	private String description;
+	private transient String type;
+	private transient Integer classId;
+	private transient String description;
+	@SerializedName("start")
 	private String dueDate;
-	private String completedDate;
-	private String completed;
-	private String className;
+	private transient String completedDate;
+	private transient String completed;
+	private transient String className;
+	@SerializedName("color")
 	private String classColor;
 
 	public Integer getId() {
@@ -164,7 +169,12 @@ public class Assignment {
 	public String toString() {
 		return "Assignment [id=" + id + ", name=" + name + ", type=" + type + ", classId=" + classId + ", description="
 				+ description + ", dueDate=" + dueDate + ", completedDate=" + completedDate + ", completed=" + completed
-				+ "]";
+				+ ", className=" + className + ", classColor=" + classColor + ", getId()=" + getId() + ", getName()="
+				+ getName() + ", getType()=" + getType() + ", getClassId()=" + getClassId() + ", getDueDate()="
+				+ getDueDate() + ", getCompletedDate()=" + getCompletedDate() + ", getCompleted()=" + getCompleted()
+				+ ", getDescription()=" + getDescription() + ", getClassName()=" + getClassName() + ", getClassColor()="
+				+ getClassColor() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass() + ", toString()="
+				+ super.toString() + "]";
 	}
 
 }
