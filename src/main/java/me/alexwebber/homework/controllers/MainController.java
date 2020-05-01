@@ -100,7 +100,7 @@ public class MainController {
 				Class mClass = classService.getClassById(Integer.parseInt(id));
 				if (mClass != null) {
 					model.addAttribute("pageAction", "Edit Class " + mClass.getName());
-					model.addAttribute("assignmentList",
+					model.addAttribute("allAssignmentList",
 							assignmentService.getAssignmentsForClass(Integer.parseInt(id)));
 					model.addAttribute("command", mClass);
 				}

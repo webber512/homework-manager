@@ -33,7 +33,7 @@
 					role="tabpanel" aria-labelledby="nav-home-tab">
 					<div class="row">
 						<div class="col-sm-12">
-							<%@ include file="/WEB-INF/views/allclasses.jsp"%>
+							<%@ include file="/WEB-INF/views/allassignments.jsp"%>
 						</div>
 					</div>
 				</div>
