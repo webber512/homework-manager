@@ -94,6 +94,7 @@ public class MainController {
 		model.addAttribute("classList", classList);
 		System.out.print(action);
 		if (action == null) {
+			model.addAttribute("action", "new");
 			model.addAttribute("command", new Class());
 		} else {
 			if (action.equals("view")) {
@@ -103,7 +104,11 @@ public class MainController {
 					model.addAttribute("allAssignmentList",
 							assignmentService.getAssignmentsForClass(Integer.parseInt(id)));
 					model.addAttribute("command", mClass);
+					model.addAttribute("className", mClass.getName());
 				}
+			} else if (action.equalsIgnoreCase("new")) {
+				model.addAttribute("action", "new");
+				model.addAttribute("command", new Class());
 			}
 		}
 		return "classes";
