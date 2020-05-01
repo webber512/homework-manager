@@ -8,7 +8,8 @@
 			<nav class="navbar bg-light">
 				<ul class="navbar-nav">
 					<c:forEach var="classs" items="${classList}">
-						<li class="nav-item"><a class="nav-link" href="#"><span
+						<li class="nav-item"><a class="nav-link"
+							href="classes?action=view&id=${classs.id}"><span
 								style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${classs.color}"></span>&nbsp;&nbsp;${classs.name}
 								<span class="badge badge-primary">${classs.numberOfAssignments}</span></a></li>
 					</c:forEach>
@@ -51,8 +52,8 @@
 				</div>
 			</nav>
 			<div class="tab-content" id="nav-tabContent">
-				<div class="tab-pane fade show active" id="nav-current" role="tabpanel"
-					aria-labelledby="nav-home-tab">
+				<div class="tab-pane fade show active" id="nav-current"
+					role="tabpanel" aria-labelledby="nav-home-tab">
 					<div class="row">
 						<div class="col-sm-12">
 							<%@ include file="/WEB-INF/views/currentassignments.jsp"%>

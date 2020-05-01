@@ -87,12 +87,27 @@ public class MainController {
 	}
 
 	@GetMapping(value = { "/classes" })
-	public String getNewClassView(Model model, HttpServletRequest request, HttpSession session) {
+	public String getNewClassView(Model model, HttpServletRequest request, HttpSession session, String action,
+			String id) {
 		model.addAttribute("title", "Classes");
 		List<Class> classList = classService.getClasses();
 		model.addAttribute("classList", classList);
-		model.addAttribute("command", new Class());
+		System.out.print(action);
+		if (action == null) {
+			model.addAttribute("command", new Class());
+		} else {
+			if (action.equals("view")) {
+				Class mClass = classService.getClassById(Integer.parseInt(id));
+				if (mClass != null) {
+					model.addAttribute("pageAction", "Edit Class " + mClass.getName());
+					model.addAttribute("assignmentList",
+							assignmentService.getAssignmentsForClass(Integer.parseInt(id)));
+					model.addAttribute("command", mClass);
+				}
+			}
+		}
 		return "classes";
+
 	}
 
 	@PostMapping(value = { "/class/new" })
