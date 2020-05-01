@@ -92,7 +92,6 @@ public class MainController {
 		model.addAttribute("title", "Classes");
 		List<Class> classList = classService.getClasses();
 		model.addAttribute("classList", classList);
-		System.out.print(action);
 		if (action == null) {
 			model.addAttribute("action", "new");
 			model.addAttribute("command", new Class());
