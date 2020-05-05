@@ -5,7 +5,6 @@
 		<thead>
 			<tr>
 				<th>Completed</th>
-				<th>Date Completed</th>
 				<th>Name</th>
 				<th>Class</th>
 				<th>Type</th>
@@ -18,7 +17,6 @@
 			<c:forEach var="assignment" items="${allAssignmentList}">
 				<tr>
 					<td>${assignment.completed}</td>
-					<td>${assignment.completedDate}</td>
 					<td><span
 						style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${assignment.classColor}"></span>&nbsp;&nbsp;${assignment.name}</td>
 					<td>${assignment.className}</td>
@@ -43,6 +41,10 @@
 
 <script>
 	$(document).ready(function() {
-		$('#allAssignmentTable').DataTable();
+		var table = $('#allAssignmentTable').DataTable();
+		
+		$('#searchF').keyup(function() {
+			table.search($(this).val()).draw();
+		})
 	});
 </script>
