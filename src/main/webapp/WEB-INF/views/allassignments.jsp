@@ -42,9 +42,5 @@
 <script>
 	$(document).ready(function() {
 		var table = $('#allAssignmentTable').DataTable();
-		
-		$('#searchF').keyup(function() {
-			table.search($(this).val()).draw();
-		})
 	});
 </script>

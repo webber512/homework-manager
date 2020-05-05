@@ -38,9 +38,5 @@
 		var table = $('#currentAssignmentTable').DataTable({
 			"order" : [ [ 3, "asc" ] ]
 		});
-		
-		$('#searchF').keyup(function() {
-			table.search($(this).val()).draw();
-		})
 	});
 </script>

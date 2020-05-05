@@ -27,10 +27,6 @@
 				<div class="my-2 my-lg-0">
 					<a class="nav-link text-white" href="#">Register</a>
 				</div>
-				<div class="my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="Search" aria-label="Search" id="searchF">
-				</div>
 			</div>
 		</nav>
 	</div>
