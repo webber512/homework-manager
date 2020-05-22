@@ -5,26 +5,21 @@
 		<div class="col-sm-3">
 			<br />
 			<h2>Class List</h2>
-			<nav class="navbar bg-light">
-				<ul class="navbar-nav">
-					<c:forEach var="classs" items="${classList}">
-						<li class="nav-item"><a class="nav-link"
-							href="classes?action=view&id=${classs.id}"><span
-								style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${classs.color}"></span>&nbsp;&nbsp;${classs.name}
-								<span class="badge badge-primary">${classs.numberOfAssignments}</span></a></li>
-					</c:forEach>
-				</ul>
-			</nav>
+			<ul class="list-group">
+				<c:forEach var="classs" items="${classList}">
+					<li
+						class="list-group-item justify-content-between aligh-items-center"><a
+						href="classes?action=view&id=${classs.id}"><span
+							style="width: 15px; height: 15px; margin: auto; display: inline-block; border: 1px solid gray; vertical-align: middle; border-radius: 2px; background:${classs.color}"></span>&nbsp;&nbsp;${classs.name}
+							<span class="badge badge-primary badge-pill">${classs.numberOfAssignments}</span></a></li>
+				</c:forEach>
+			</ul>
 			<div class="row">
 				<div class="col-sm-12">
-					<br />
-					<h3>Statistics</h3>
-					<p>
-						Number of open assignments: ${numberOfOpenAssignments}<br />
-						Number of completed assignments: ${numberOfCompletedAssignments}<br />
-						Number of total assignments: ${numberOfAssignments}
-					</p>
-					You are ${progress}% done!
+					<br /> Number of open assignments: ${numberOfOpenAssignments}<br />
+					Number of completed assignments: ${numberOfCompletedAssignments}<br />
+					Number of total assignments: ${numberOfAssignments} You are
+					${progress}% done!
 					<div class="progress">
 						<div
 							class="progress-bar progress-bar-striped progress-bar-animated"
